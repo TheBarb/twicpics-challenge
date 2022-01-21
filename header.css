@@ -1,0 +1,163 @@
+@media all and (max-width: 1023px){
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+:root {
+  --white: #fff;
+  --black: #221f1f;
+ 
+  /*Hier die Hintergrundfarbe für den Header!*/
+  
+  --lightpurple: white;
+  --darkgray: black;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  position: relative;
+  font: 16px/1.5 sans-serif;
+  color: black;
+}
+
+
+/* MAIN RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.trigger-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 1.5rem 0 2rem;
+  z-index: 2;
+  background: var(--lightpurple);
+  transition: transform 0.4s;
+}
+
+.page-header .trigger-menu {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: black;
+  letter-spacing: 0.2em;
+}
+
+.page-header .trigger-menu svg {
+  background-color: white;
+  fill: var(--black);
+  /*margin-right: 12px;*/
+  transition: transform 0.3s;
+}
+
+.page-header .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  text-align: center;
+  place-items: center;
+  padding: 30vh 0 5vh;
+  overflow: auto;
+  z-index: 1;
+  background: var(--lightpurple);
+}
+
+.page-header .menu a {
+  font-size: 3rem;
+}
+
+.page-header .sub-menu a {
+  font-size: 1.5rem;
+}
+
+
+/* BODY CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.menu-open {
+  overflow: hidden;
+}
+
+.menu-open .trigger-menu-wrapper {
+  /*background: transparent;*/
+  background-color: black;
+  color: white;
+}
+
+.menu-open .page-header .menu {
+  display: block;
+}
+
+.menu-open .page-header svg {
+  background-color: black;
+  fill: var(--white);
+  transform: rotate(45deg);
+}
+
+.menu-open h2 {
+  color: white;
+}
+
+.menu-open .menu {
+  background-color: black;
+}
+
+.navigate {
+  color: white;
+  background-color:black;
+}
+
+
+.scroll-down .trigger-menu-wrapper {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up .trigger-menu-wrapper {
+  transform: none;
+}
+
+.scroll-up:not(.menu-open) .trigger-menu-wrapper {
+  background: var(--lightpurple);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+}
+
+@media all and (max-width: 480px){
+
+  .hide-on-mobile {
+    display: none;
+  }
+  
+.trigger-menu-wrapper {
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+}
+
